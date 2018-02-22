@@ -5263,6 +5263,9 @@ ul.b-crumbs {
 #respond textarea:focus {
 	border-color: #bfcedc;
 }
+#respond .form-submit {
+	clear: both;
+}
 #respond .blog-comment-submit {
 	overflow: hidden;
 	padding: 0 0 17px;

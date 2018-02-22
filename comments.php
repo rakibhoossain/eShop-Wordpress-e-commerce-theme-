@@ -59,6 +59,9 @@ $comment_args = array( 'title_reply'=>'Add your comment',
     'email'  => '<input id="email" name="email" placeholder="E-mail" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />',
 
     'url'    => '' ) ),
+'submit_button' => '<div class="prod-comment-submit">
+            <input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />'.rating_fields().'
+        </div>',
 
     'comment_field' => '<textarea id="comment" placeholder="Your comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>',
 
