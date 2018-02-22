@@ -17,19 +17,24 @@ get_header(); ?>
 <main>
     <section class="container">
         <?php if(have_posts()): ?>
-	        <ul class="b-crumbs">
-	            <li>
-	                <a href="index.html">
-	                    Home
-	                </a>
-	            </li>
-	            <li>
-	                <span>Blog</span>
-	            </li>
-	        </ul>
-	        <h1 class="main-ttl main-ttl-categs"><span>Blog</span></h1>
-	        <!-- Blog Categories -->
-	        <ul class="blog-categs">
+	        <?php eshop_breadcrumbs(); ?>
+        <h1 class="main-ttl main-ttl-categs"><span><?php the_title(); ?></span></h1>
+
+
+            <!-- Blog Categories -->
+            <ul class="blog-categs">
+
+                        <?php $ridianur_taxonomy = 'portfolio_category';
+                            $ridianur_terms = get_terms(); // Get all terms of a taxonomy
+                            if ( $ridianur_terms && !is_wp_error( $ridianur_terms ) ) :
+                                foreach ( $ridianur_terms as $ridianur_term ) { 
+                                    var_dump($ridianur_term);
+
+                                    ?>
+                        <li class="filter btn-custom btn-menu" data-filter=".<?php echo  strtolower(preg_replace('/[^a-zA-Z]+/', '-', $ridianur_term->name)); ?>"><?php echo esc_attr( $ridianur_term->name); ?></li>
+                        <?php } endif;?>
+
+
 	            <li class="active"><a href="blog.html">All</a></li>
 	            <li><a href="blog.html">News</a></li>
 	            <li><a href="blog.html">Reviews</a></li>
@@ -58,14 +63,6 @@ get_header(); ?>
                get_template_part( 'template-parts/content', 'none' );            
             endif;
             ?>
-
-<!--         <ul class="pagi">
-            <li class="active"><span>1</span></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li class="pagi-next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-        </ul> -->
         
     </section>
 </main>

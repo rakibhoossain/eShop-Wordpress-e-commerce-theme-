@@ -155,6 +155,16 @@ $(document).ready(function($){
 		$(".prod-tb .list-img-carousel").brazzersCarousel();
 	}
 
+  /* Rating */
+  $('.prod-rating .fa').on('click', function(){
+    var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+
+    $('.prod-rating').attr('data-rating',onStar);
+    $('#rating').val(onStar);
+    
+  });
+
+
 });
 
 

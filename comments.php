@@ -25,36 +25,19 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-			$comment_count = get_comments_number();
-			if ( 1 === $comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'eshop' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'eshop' ) ),
-					number_format_i18n( $comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
-
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
+		<ul class="reviews-list">
+		<?php //wp_list_comments( 'type=comment&callback=eshop_comment' ); ?>
+		<?php
+		 wp_list_comments( 
+			array( 
+				// 'type' => 'comment',
+				'callback' => 'eshop_comment',
+				'avatar_size'       => 120, 
+			)); 
+		?>
+		</ul>
 
 		<?php the_comments_navigation();
 
@@ -66,7 +49,28 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+
+$comment_args = array( 'title_reply'=>'Add your comment',
+
+'fields' => apply_filters( 'comment_form_default_fields', array(
+
+	'author' => '<input id="author" name="author" placeholder="Name" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />',   
+
+    'email'  => '<input id="email" name="email" placeholder="E-mail" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />',
+
+    'url'    => '' ) ),
+
+    'comment_field' => '<textarea id="comment" placeholder="Your comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>',
+
+    'label_submit' => __('Submit','eshop'),
+
+    'comment_notes_before' => '',
+    'comment_notes_after' => '',
+
+);
+
+comment_form($comment_args);
+
 	?>
 
 </div><!-- #comments -->

@@ -358,7 +358,7 @@ body {
 .shop-menu ul li.topauth a:first-child {
 	margin: 0;
 	padding: 2px 12px 2px 0;
-	background: url(../img/sep1.png) no-repeat right center;
+	background: url(images/sep1.png) no-repeat right center;
 }
 /*----------------------------------
 2 - Header
@@ -399,7 +399,7 @@ body {
 	display: block;
 	padding: 11px 10px 11px 38px;
 	font-weight: 500;
-	background: #eff1fa url(../img/bar.png) no-repeat 14px 15px;
+	background: #eff1fa url(images/bar.png) no-repeat 14px 15px;
 }
 .topmenu .topcatalog .topcatalog-btn:after {
 	position: absolute;
@@ -542,8 +542,20 @@ body {
 	padding: 11px 10px 11px 43px;
 	font-weight: 500;
 	text-align: left;
-	background: #eff1fa url(../img/bar.png) no-repeat 18px 15px;
+	background: #eff1fa;
 	display: none;
+}
+.topmenu .mainmenu-btn:before {
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 18px;
+    display: block;
+    font-size: 16px;
+    width: 15px;
+    content: "\f0c9";
+    font-family: 'FontAwesome';
 }
 .topmenu .mainmenu-btn:after {
 	position: absolute;
@@ -1064,7 +1076,7 @@ body {
 	padding: 0;
 }
 .stylization ul > li {
-	list-style-image: url("../img/chk1.png");
+	list-style-image: url("images/chk1.png");
 }
 .stylization li {
 	padding: 0;
@@ -3390,7 +3402,7 @@ ul.b-crumbs {
 	top: 50%;
 	left: 50%;
 	bottom: 0;
-	background: url("../img/arr1.png") no-repeat left top;
+	background: url("images/arr1.png") no-repeat left top;
 	display: block;
 }
 .prodtb-i .prodtb-i-toggle.opened:after {
@@ -4130,7 +4142,7 @@ ul.b-crumbs {
 	margin: 0;
 	display: inline-block;
 	vertical-align: bottom;
-	background: url(../img/viewmode.png) no-repeat;
+	background: url(images/viewmode.png) no-repeat;
 }
 .section-cont .section-mode li.section-mode-gallery a:before {
 	background-position: left bottom;
@@ -4401,7 +4413,7 @@ ul.b-crumbs {
 	content: "";
 	text-indent: initial;
 	margin: -9px 4px 0 0;
-	background: url(../img/nav1.png) no-repeat left top;
+	background: url(images/nav1.png) no-repeat left top;
 	height: 18px;
 	width: 20px;
 	position: absolute;
@@ -4436,7 +4448,7 @@ ul.b-crumbs {
 	content: "";
 	text-indent: initial;
 	margin: -9px 0 0 4px;
-	background: url(../img/nav1.png) no-repeat left bottom;
+	background: url(images/nav1.png) no-repeat left bottom;
 	height: 18px;
 	width: 20px;
 	position: absolute;
@@ -4532,7 +4544,7 @@ ul.b-crumbs {
 	content: "";
 	text-indent: initial;
 	margin: -9px 3px 0 0;
-	background: url(../img/nav1.png) no-repeat left top;
+	background: url(images/nav1.png) no-repeat left top;
 	height: 18px;
 	width: 20px;
 	position: absolute;
@@ -4559,7 +4571,7 @@ ul.b-crumbs {
 	content: "";
 	text-indent: initial;
 	margin: -9px 0 0 3px;
-	background: url(../img/nav1.png) no-repeat left bottom;
+	background: url(images/nav1.png) no-repeat left bottom;
 	height: 18px;
 	width: 20px;
 	position: absolute;
@@ -5176,23 +5188,20 @@ ul.b-crumbs {
 
 /* Connent form */
 
-.prod-comment-form {
+#respond {
 	width: 100%;
 	margin: 15px auto 10px;
 	max-width: 480px;
 	clear: both;
 }
-.prod-comment-form.post-form {
-	margin-bottom: 70px;
-}
-.prod-comment-form h3 {
+#respond h3 {
 	font-size: 20px;
 	color: #373d54;
 	font-weight: 500;
 	margin: 0 0 18px;
 	text-align: center;
 }
-.prod-comment-form input[type=text] {
+#respond input[type=text] {
 	float: left;
 	width: 48.5%;
 	margin: 0 3% 20px 0;
@@ -5205,26 +5214,26 @@ ul.b-crumbs {
 	padding: 0 14px;
 	font-size: 14px;
 }
-.prod-comment-form input[type=text]:nth-of-type(2n) {
+#respond input[type=text]:nth-of-type(2n) {
 	margin-right: 0;
 }
-.prod-comment-form input[type=text]:nth-of-type(2n+1) {
+#respond input[type=text]:nth-of-type(2n+1) {
 	clear: left;
 }
-.prod-comment-form input[type=text]::-webkit-input-placeholder {
+#respond input[type=text]::-webkit-input-placeholder {
 	color: #b8bcce;
 }
-.prod-comment-form input[type=text]::-moz-placeholder {
+#respond input[type=text]::-moz-placeholder {
 	color: #b8bcce;
 	opacity: 1;
 }
-.prod-comment-form input[type=text]:-ms-input-placeholder {
+#respond input[type=text]:-ms-input-placeholder {
 	color: #b8bcce;
 }
-.prod-comment-form input[type=text]:focus {
+#respond input[type=text]:focus {
 	border-color: #bfcedc;
 }
-.prod-comment-form textarea {
+#respond textarea {
 	float: none;
 	width: 100%;
 	max-width: 100%;
@@ -5241,20 +5250,20 @@ ul.b-crumbs {
 	padding: 14px 14px;
 	font-size: 14px;
 }
-.prod-comment-form textarea::-webkit-input-placeholder {
+#respond textarea::-webkit-input-placeholder {
 	color: #b8bcce;
 }
-.prod-comment-form textarea::-moz-placeholder {
+#respond textarea::-moz-placeholder {
 	color: #b8bcce;
 	opacity: 1;
 }
-.prod-comment-form textarea:-ms-input-placeholder {
+#respond textarea:-ms-input-placeholder {
 	color: #b8bcce;
 }
-.prod-comment-form textarea:focus {
+#respond textarea:focus {
 	border-color: #bfcedc;
 }
-.prod-comment-form .blog-comment-submit {
+#respond .blog-comment-submit {
 	overflow: hidden;
 	padding: 0 0 17px;
 	clear: both;
@@ -5309,8 +5318,8 @@ ul.b-crumbs {
 .prod-rating[data-rating="5"] .fa:nth-child(1):before {
 	content: "\f005";
 }
-.prod-comment-form input[type=submit],
-.prod-comment-form button[type=button] {
+#respond input[type=submit],
+#respond button[type=button] {
 	border: none;
 	cursor: pointer;
 	text-align: center;
@@ -5327,8 +5336,8 @@ ul.b-crumbs {
 	background: #373d54;
 	position: relative;
 }
-.prod-comment-form input[type=submit]:hover,
-.prod-comment-form button[type=button]:hover {
+#respond input[type=submit]:hover,
+#respond button[type=button]:hover {
 	background: #474f6e;
 }
 /*----------------------------------
@@ -5635,7 +5644,7 @@ ul.b-crumbs {
 	content: "";
 	text-indent: initial;
 	margin: -9px 0 0;
-	background: url(../img/nav1.png) no-repeat left bottom;
+	background: url(images/nav1.png) no-repeat left bottom;
 	height: 18px;
 	width: 20px;
 	position: absolute;
@@ -5652,7 +5661,7 @@ ul.b-crumbs {
 	content: "";
 	text-indent: initial;
 	margin: -9px 0 0;
-	background: url(../img/nav1.png) no-repeat left top;
+	background: url(images/nav1.png) no-repeat left top;
 	height: 18px;
 	width: 20px;
 	position: absolute;
@@ -6394,7 +6403,7 @@ Blog V2
 	content: "";
 	width: 9px;
 	height: 19px;
-	background: url(../img/separator1.png) no-repeat left top;
+	background: url(images/separator1.png) no-repeat left top;
 	top: 50%;
 	left: 0;
 	margin: -15px 0 0;
@@ -6464,7 +6473,7 @@ Blog V2
 	display: block;
 	content: "";
 	text-indent: initial;
-	background: url(../img/nav1.png) no-repeat left top;
+	background: url(images/nav1.png) no-repeat left top;
 	height: 18px;
 	width: 20px;
 	position: absolute;
@@ -6632,7 +6641,7 @@ Blog V2
 	height: 32px;
 	transition: all 0.2s;
 	display: block;
-	background: url(../img/remove.jpg) center center no-repeat;
+	background: url(images/remove.jpg) center center no-repeat;
 }
 .cart-items-wrap .cart-items .cart-qnt {
 	overflow: hidden;
@@ -8314,7 +8323,7 @@ body .component-desc.component-desc-ct {
 ----------------------------------*/
 .newsletter {
 	color: #373d54;
-	background-image: url(../img/subscribe.jpg);
+	background-image: url(images/subscribe.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	-o-background-size: cover;
@@ -8900,7 +8909,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 	display: block;
 	width: 12px;
 	height: 12px;
-	background: url('../img/chosen-sprite.png') -42px 1px no-repeat;
+	background: url('images/chosen-sprite.png') -42px 1px no-repeat;
 	font-size: 1px;
 }
 .chosen-container-single .chosen-single abbr:hover {
@@ -9200,8 +9209,8 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 .chosen-rtl .chosen-search input[type="text"] {
 	padding: 4px 5px 4px 20px;
-	background: white url('../img/chosen-sprite.png') no-repeat -30px -20px;
-	background: url('../img/chosen-sprite.png') no-repeat -30px -20px;
+	background: white url('images/chosen-sprite.png') no-repeat -30px -20px;
+	background: url('images/chosen-sprite.png') no-repeat -30px -20px;
 	direction: rtl;
 }
 .chosen-rtl.chosen-container-single .chosen-single div b {
@@ -10040,7 +10049,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 45 - Comment Form
 ----------------------------------*/
 
-#comments ol{
+/*#comments ol{
     list-style: none;
 }
 .fn,
@@ -10083,8 +10092,8 @@ h2.comments-title {
     padding: 0px;
 }
 .comment-form p.form-submit {
-    /* text-align: center; */
-}
+ text-align: center; //
+} 
 .comment-form p label {
     display: inline-block;
     width: 100px;
@@ -10137,7 +10146,7 @@ h2.comments-title {
 border-color: #bfcedc;
 }
 
-.inner #respond textarea {
+.inner#respond textarea {
     outline: none;
     display: inline-block;
     width: 100% !important;
@@ -10158,7 +10167,7 @@ border-color: #bfcedc;
     text-align: center;
     height: auto;
     padding: 10px 24px 11px;
-    /* display: inline-block; */
+    display: inline-block; //
     margin: 0 0 15px;
     font-size: 13px;
     letter-spacing: 1px;
@@ -10196,17 +10205,17 @@ border-color: #bfcedc;
     margin-right: 10px;
 }
 .comment-metadata>a {
-   /* position: absolute;
+    position: absolute;////
     color: #000000;
     font-size: 12px;
     font-weight: 700;
     top: 20px;
-    right: 10px;*/
+    right: 10px;
 }
 .comment-metadata .edit-link {
-    /*position: absolute;
+    position: absolute;
     right: 70px;
-    bottom: 20px;*/
+    bottom: 20px;
 }
 .comment-content {
     padding: 5px;
@@ -10237,8 +10246,36 @@ p.comment-form-email{
 	width: 48.5%;
 	display: inline-block;
 }
-
-
+*/
+.post-navigation {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+}
+.nav-previous {
+    float: left;
+    width: 50%;
+}
+.nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+.nav-previous a, .nav-next a {
+    display: inline-block;
+    margin: 0 30px;
+    padding: .7em 1em;
+    color: #f5f6f7;
+    font-size: 14px;
+    background: #373d54;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+.nav-previous a {
+    margin-right: 0;
+}
 
 
 

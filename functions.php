@@ -211,10 +211,11 @@ if ( ! function_exists( 'eshop_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 		add_image_size('post-thumbnail', 360, 203, true);
+		add_image_size('post-single', 1140, 580, true);
 		
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'eshop' ),
+			'main-menu' => esc_html__( 'Main Menu', 'eshop' ),
 		) );
 
 		/*
@@ -244,8 +245,8 @@ if ( ! function_exists( 'eshop_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 53,
+			'width'       => 170,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -280,6 +281,17 @@ function eshop_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar(array(
+      'name' => __('Footer', 'eshop') ,
+      'id' => 'footer-sidebar',
+      'description' => __('The widgets added in this sidebar will appear in footer.', 'eshop') ,
+      'before_widget' => '<div class="f-menu">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+
+
+    ));
 }
 add_action( 'widgets_init', 'eshop_widgets_init' );
 
@@ -288,15 +300,16 @@ add_action( 'widgets_init', 'eshop_widgets_init' );
  */
 require get_template_directory() . '/inc/eshop-scripts.php';
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+require get_template_directory() . '/inc/components/related-posts/class-eshop-related-posts.php';
+require get_template_directory() . '/inc/components/breadcrumbs/class-eshop-breadcrumbs.php';
+
+require get_template_directory() . '/inc/extendcomment.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.

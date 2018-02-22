@@ -102,7 +102,7 @@ html[xmlns] .flexslider .slides {
   overflow: hidden;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  background: url(../img/nav1.png) no-repeat left top;
+  background: url(images/nav1.png) no-repeat left top;
   white-space: nowrap;
   text-indent: 100%;
 }

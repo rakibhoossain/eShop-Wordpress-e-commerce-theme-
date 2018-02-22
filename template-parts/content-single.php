@@ -13,37 +13,16 @@
 <main>
     <section class="container">
 
-
-        <ul class="b-crumbs">
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="blog.html">
-                    Blog
-                </a>
-            </li>
-            <li>
-                <a href="blog.html">
-                    News
-                </a>
-            </li>
-            <li>
-                <span>Hic quod maxime deserunt</span>
-            </li>
-        </ul>
-        <h1 class="main-ttl"><span>Hic quod maxime deserunt</span></h1>
-
+        <?php eshop_breadcrumbs(); ?>
+        <h1 class="main-ttl"><span><?php the_title(); ?></span></h1>
+        
         <!-- Blog Post - start -->
         <div class="post-wrap stylization">
-            <img class="post-img" src="<?php echo get_template_directory_uri();?>/images/post/slide1.jpg" alt="">
-            <p>Pariatur, corrupti, officia, molestias consectetur nesciunt ratione nihil fugiat eveniet nisi quia reiciendis dolor soluta vero autem nemo reprehenderit mollitia deserunt iste quae necessitatibus dolores a atque iure ipsa voluptatum nobis saepe temporibus error corporis minus assumenda nam ullam praesentium harum enim tempora et excepturi.</p>
-            <p>Quod soluta corrupti earum officia vel inventore vitae quidem, consequuntur odit impedit, eaque dolorem odio praesentium iusto amet voluptatum distinctio iste dicta maiores doloremque porro. Ipsa doloremque illum animi laborum quo in nemo delectus veritatis, amet numquam doloribus a iure sequi nobis vero facere necessitatibus ipsam</p>
+            <?php the_post_thumbnail('post-single'); ?>
+            <?php the_content(); ?>
 
             <!-- Slider -->
-            <div class="flexslider post-slider" id="post-slider-car">
+<!--             <div class="flexslider post-slider" id="post-slider-car">
                 <ul class="slides">
                     <li>
                         <a data-fancybox-group="fancy-img" class="fancy-img" href="<?php echo get_template_directory_uri();?>/images/post/slide1.jpg"><img src="<?php echo get_template_directory_uri();?>/images/post/slide1.jpg" alt=""></a>
@@ -55,9 +34,8 @@
                         <a data-fancybox-group="fancy-img" class="fancy-img" href="img/post/slide3.jpg"><img src="<?php echo get_template_directory_uri();?>/images/post/slide3.jpg" alt=""></a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
 
-            <p>Minima, earum fuga maiores unde quod quae aspernatur magnam quis adipisci ipsum maxime iusto quidem? Recusandae dolore ipsam eius alias quidem. Dignissimos, recusandae, saepe, omnis, non totam vero unde mollitia natus aliquam magni qui quibusdam incidunt ea nihil error facere ut libero blanditiis accusamus quasi facilis animi repellat consequuntur in sit rerum atque voluptatibus ipsa ullam voluptatum laborum praesentium nesciunt est iusto nulla earum ab tenetur!</p>
 
             <!-- Share Links -->
             <div class="post-share-wrap">
@@ -99,65 +77,26 @@
                     </li>
                 </ul>
                 <ul class="post-info">
-                    <li><time datetime="2016-11-09 22:00:32">09 Nov, 2017</time></li>
-                    <li><a href="blog.html" class="blog-i-categ">News</a></li>
-                    <li>Comments: <a href="#">3</a></li>
-                </ul>
-            </div>
 
-            <!-- Related Posts -->
-            <div class="flexslider post-rel-wrap" id="post-rel-car">
-                <ul class="slides">
-                    <li class="posts-i">
-                        <a class="posts-i-img" href="post.html"><span style="background: url(http://placehold.it/354x236)"></span></a>
-                        <time class="posts-i-date" datetime="2017-01-01 12:19:46"><span>09</span> Feb</time>
-                        <div class="posts-i-info">
-                            <a class="posts-i-ctg" href="blog.html">Articles</a>
-                            <h3 class="posts-i-ttl"><a href="post.html">Adipisci corporis velit</a></h3>
-                        </div>
-                    </li>
-                    <li class="posts-i">
-                        <a class="posts-i-img" href="post.html"><span style="background: url(http://placehold.it/360x203)"></span></a>
-                        <time class="posts-i-date" datetime="2017-01-01 12:19:46"><span>05</span> Jan</time>
-                        <div class="posts-i-info">
-                            <a class="posts-i-ctg" href="blog.html">Reviews</a>
-                            <h3 class="posts-i-ttl"><a href="post.html">Excepturi ducimus recusandae</a></h3>
-                        </div>
-                    </li>
-                    <li class="posts-i">
-                        <a class="posts-i-img" href="post.html"><span style="background: url(http://placehold.it/360x224)"></span></a>
-                        <time class="posts-i-date" datetime="2017-01-01 12:19:46"><span>17</span> Apr</time>
-                        <div class="posts-i-info">
-                            <a class="posts-i-ctg" href="blog.html">Reviews</a>
-                            <h3 class="posts-i-ttl"><a href="post.html">Consequuntur minus numquam</a></h3>
-                        </div>
-                    </li>
-                    <li class="posts-i">
-                        <a class="posts-i-img" href="post.html"><span style="background: url(http://placehold.it/314x236)"></span></a>
-                        <time class="posts-i-date" datetime="2017-01-01 12:19:46"><span>21</span> May</time>
-                        <div class="posts-i-info">
-                            <a class="posts-i-ctg" href="blog.html">Articles</a>
-                            <h3 class="posts-i-ttl"><a href="post.html">Non ex sapiente excepturi</a></h3>
-                        </div>
-                    </li>
-                    <li class="posts-i">
-                        <a class="posts-i-img" href="post.html"><span style="background: url(http://placehold.it/318x236)"></span></a>
-                        <time class="posts-i-date" datetime="2017-01-01 12:19:46"><span>24</span> Jan</time>
-                        <div class="posts-i-info">
-                            <a class="posts-i-ctg" href="blog.html">Articles</a>
-                            <h3 class="posts-i-ttl"><a href="post.html">Veritatis officiis</a></h3>
-                        </div>
-                    </li>
-                    <li class="posts-i">
-                        <a class="posts-i-img" href="post.html"><span style="background: url(http://placehold.it/354x236)"></span></a>
-                        <time class="posts-i-date" datetime="2017-01-01 12:19:46"><span>08</span> Sep</time>
-                        <div class="posts-i-info">
-                            <a class="posts-i-ctg" href="blog.html">Reviews</a>
-                            <h3 class="posts-i-ttl"><a href="post.html">Ratione magni laudantium</a></h3>
-                        </div>
-                    </li>
+					<?php
+						printf(
+
+							// Translators: 1 is the post author, 2 is the category list.
+							__( '<li><time datetime="%1$s">%1$s</time></li><li>%2$s</li><li>Comments: %3$s</li>', 'eshop' ),
+							// Translators: Post time
+							get_the_date( get_option( 'date_format' ), $post->ID ),
+							// Translators: tag list
+							get_the_tag_list( 'Tags: ',', ','' ),
+							// Translators: Number of com,ments
+							eshop_get_number_of_comments( $post->ID )						
+							
+						);
+						?>
                 </ul>
             </div>
+			<div class="clearfix"></div>
+			<!-- Related Posts -->
+			<?php do_action( 'eshop_single_after_article' ); ?>
 
         </div>
         <!-- Blog Post - end -->
@@ -381,101 +320,6 @@
             </div>
         </div>
         <!-- Related Products - end -->
-
-        <!-- Comments - start -->
-        <ul class="reviews-list">
-            <li class="reviews-i existimg">
-                <div class="reviews-i-img">
-                    <img src="http://placehold.it/120x120" alt="Jeni Margie">
-                    <div class="reviews-i-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <time datetime="2017-12-21 12:19:46" class="reviews-i-date">21 May 2017</time>
-                </div>
-                <div class="reviews-i-cont">
-                    <p>Eveniet nobis minus possimus eius, doloribus ex similique debitis nihil at facere delectus unde, commodi, alias. <br>Eius facilis, dolore officia veritatis, doloribus voluptatem aliquid rem corporis quam officiis at dignissimos dolorum, velit assumenda facere necessitatibus doloremque quos. Laudantium velit architecto ipsum nulla</p>
-                    <span class="reviews-i-margin"></span>
-                    <h3 class="reviews-i-ttl">Jeni Margie</h3>
-                </div>
-            </li>
-            <li class="reviews-i existimg">
-                <div class="reviews-i-img">
-                    <img src="http://placehold.it/120x120" alt="Brigham Murphy">
-                    <div class="reviews-i-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <time datetime="2017-12-21 12:19:46" class="reviews-i-date">12 March 2017</time>
-                </div>
-                <div class="reviews-i-cont">
-                    <p>Ipsa doloremque illum animi laborum quo in nemo delectus veritatis, amet numquam doloribus a iure sequi nobis vero facere necessitatibus ipsam dolorem magnam? Tempora ea ratione vel nisi, qui perferendis nulla. <br>Minus sequi iste, nam nobis, excepturi nihil consequuntur reprehenderit ipsam, quam consequatur in. <br>Esse, doloremque consectetur veniam quo ut voluptas necessitatibus quae quis iusto quod optio eligendi distinctio dicta, nihil impedit officia aspernatur tenetur saepe expedita, odio vitae reprehenderit pariatur!</p>
-                    <span class="reviews-i-margin"></span>
-                    <h3 class="reviews-i-ttl">Brigham Murphy</h3>
-                </div>
-            </li>
-            <li class="reviews-i existimg">
-                <div class="reviews-i-img">
-                    <img src="http://placehold.it/120x120" alt="Barrie Roderick">
-                    <div class="reviews-i-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <time datetime="2017-12-21 12:19:46" class="reviews-i-date">07 June 2017</time>
-                </div>
-                <div class="reviews-i-cont">
-                    <p>Perferendis recusandae consequuntur quasi, non culpa. Minus porro officiis veniam facilis praesentium expedita doloribus, recusandae aut dolore autem, modi consequuntur rem perferendis dolores quisquam, sequi quas. <br>Iusto et, eius laboriosam beatae, cupiditate officiis! Iure iste, voluptate non accusamus quis, dolor quo quam dolore pariatur enim molestias rerum minima veritatis. <br>Officiis nihil culpa architecto repudiandae magni quo, ipsa nam omnis, laborum minus debitis impedit, alias eum non magnam veritatis animi.</p>
-                    <span class="reviews-i-margin"></span>
-                    <h3 class="reviews-i-ttl">Barrie Roderick</h3>
-                </div>
-            </li>
-            <li class="reviews-i existimg">
-                <div class="reviews-i-img">
-                    <img src="http://placehold.it/120x120" alt="Edweena Chelsea">
-                    <div class="reviews-i-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <time datetime="2017-01-01 12:19:46" class="reviews-i-date">18 March 2017</time>
-                </div>
-                <div class="reviews-i-cont">
-                    <p>Corrupti velit, vero esse, aperiam error magni illum quos, accusantium debitis et possimus recusandae tempora ad itaque dolorem veniam non voluptatem impedit iste? Dicta doloremque hic porro aspernatur. Dolores eligendi similique, cumque, eius veritatis recusandae quos dignissimos libero molestias perspiciatis.</p>
-                    <span class="reviews-i-margin"></span>
-                    <h3 class="reviews-i-ttl">Edweena Chelsea</h3>
-                </div>
-            </li>
-        </ul>
-        <!-- Comments - end -->
-
-        <!-- Comment Form - start -->
-        <div class="prod-comment-form post-form">
-            <h3>Add your comment</h3>
-            <form method="POST" action="#">
-                <input type="text" placeholder="Name">
-                <input type="text" placeholder="E-mail">
-                <textarea placeholder="Your comment"></textarea>
-                <div class="prod-comment-submit">
-                    <input type="submit" value="Submit">
-                    <div class="prod-rating">
-                        <i class="fa fa-star-o" title="5"></i><i class="fa fa-star-o" title="4"></i><i class="fa fa-star-o" title="3"></i><i class="fa fa-star-o" title="2"></i><i class="fa fa-star-o" title="1"></i>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <!-- Comment Form - end -->
-
     </section>
 </main>
 <!-- Main Content - end -->
