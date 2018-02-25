@@ -13,28 +13,17 @@
  */
 
 get_header(); ?>
-<!-- Main Content - start -->
-<main>
-    <section class="container">
-        <?php if(have_posts()): ?>
-	        <?php eshop_breadcrumbs(); ?>
-        <h1 class="main-ttl main-ttl-categs"><span><?php the_title(); ?></span></h1>
 
+
+
+        <?php if(have_posts()): ?>
+    	<?php eshop_breadcrumbs(); ?>
+                <?php if ( is_home() && ! is_front_page() ) : ?>
+                <h1 class="main-ttl main-ttl-categs"><span><?php single_post_title(); ?></span></h1>
+        <?php endif; ?>
 
             <!-- Blog Categories -->
             <ul class="blog-categs">
-
-                        <?php $ridianur_taxonomy = 'portfolio_category';
-                            $ridianur_terms = get_terms(); // Get all terms of a taxonomy
-                            if ( $ridianur_terms && !is_wp_error( $ridianur_terms ) ) :
-                                foreach ( $ridianur_terms as $ridianur_term ) { 
-                                    var_dump($ridianur_term);
-
-                                    ?>
-                        <li class="filter btn-custom btn-menu" data-filter=".<?php echo  strtolower(preg_replace('/[^a-zA-Z]+/', '-', $ridianur_term->name)); ?>"><?php echo esc_attr( $ridianur_term->name); ?></li>
-                        <?php } endif;?>
-
-
 	            <li class="active"><a href="blog.html">All</a></li>
 	            <li><a href="blog.html">News</a></li>
 	            <li><a href="blog.html">Reviews</a></li>
@@ -64,8 +53,5 @@ get_header(); ?>
             endif;
             ?>
         
-    </section>
-</main>
-<!-- Main Content - end -->
 <?php
 get_footer();

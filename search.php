@@ -9,9 +9,6 @@
 
 get_header(); ?>
 
-<main>
-    <section class="container">
-
 		<?php
 		if ( have_posts() ) : ?>
 
@@ -43,8 +40,6 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
 
 <?php
 get_footer();

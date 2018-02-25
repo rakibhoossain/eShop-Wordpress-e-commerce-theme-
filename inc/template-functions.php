@@ -57,14 +57,51 @@ if ( ! function_exists( 'eshop_get_number_of_comments' ) ) {
 	}
 }
 
-if ( ! function_exists( 'eshop_breadcrumbs' ) ) {
-	/**
-	 * Render the breadcrumbs with help of class-breadcrumbs.php
-	 *
-	 * @return void
-	 */
-	function eshop_breadcrumbs() {
-		$breadcrumbs = new Eshop_Breadcrumbs();
-		$breadcrumbs->get_breadcrumbs();
-	}
-}
+// if ( ! function_exists( 'eshop_breadcrumbs' ) ) {
+// 	/**
+// 	 * Render the breadcrumbs with help of class-breadcrumbs.php
+// 	 *
+// 	 * @return void
+// 	 */
+// 	function eshop_breadcrumbs() {
+// 		$breadcrumbs = new Eshop_Breadcrumbs();
+// 		$breadcrumbs->get_breadcrumbs();
+// 	}
+// }
+
+/**
+ *  Breadcrumb
+ *
+ *
+ */
+if ( ! function_exists( 'eshop_breadcrumbs' ) ) :
+
+    /**
+     * Simple breadcrumb.
+     *
+     * @since 1.0.0
+     *
+     * @link: https://gist.github.com/melissacabral/4032941
+     *
+     * @param  array $args Arguments
+     */
+    function eshop_breadcrumbs( $args = array() ) {
+        // Bail if Home Page.
+        // if ( is_front_page() || is_home() ) {
+        if ( is_front_page() ) {
+            return;
+        }
+
+        if ( ! function_exists( 'breadcrumb_trail' ) ) {
+            require_once trailingslashit(get_template_directory()) . '/inc/breadcrumbs.php';
+        }
+
+        $breadcrumb_args = array(
+            'container'   => 'div',
+            'show_browse' => false,
+        );
+        breadcrumb_trail( $breadcrumb_args );
+       
+    }
+
+endif;

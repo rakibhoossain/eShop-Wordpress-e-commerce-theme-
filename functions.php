@@ -250,6 +250,14 @@ if ( ! function_exists( 'eshop_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/**
+		 * Declaring Woocommerce Compatibility
+		 */
+		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 	}
 endif;
 add_action( 'after_setup_theme', 'eshop_setup' );
@@ -265,6 +273,8 @@ function eshop_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'eshop_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'eshop_content_width', 0 );
+
+
 
 /**
  * Register widget area.
@@ -307,7 +317,6 @@ require get_template_directory() . '/inc/eshop-scripts.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 require get_template_directory() . '/inc/components/related-posts/class-eshop-related-posts.php';
-require get_template_directory() . '/inc/components/breadcrumbs/class-eshop-breadcrumbs.php';
 
 require get_template_directory() . '/inc/extendcomment.php';
 
@@ -328,3 +337,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// woocomerce
+// Add remove woocommerce defaults functions
+add_action( 'init', 'eshop_add_remove_woocommerce_defaults_functions' );
+function eshop_add_remove_woocommerce_defaults_functions() {
+	
+	// Shop page
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20, 0 );
+	
+}

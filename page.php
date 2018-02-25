@@ -14,8 +14,6 @@
 
 get_header(); ?>
 
-	<main>
-		<div class="container">
 			<?php eshop_breadcrumbs(); ?>
 
 			<?php
@@ -30,9 +28,6 @@ get_header(); ?>
 
 			endwhile; // End of the loop.
 			?>
-
-		</div>
-	</main><!-- #main -->
 
 <?php
 get_footer();

@@ -10,7 +10,9 @@
  */
 
 ?>
-
+    </section>
+</main>
+<!-- Main Content - end -->
 <!-- Footer - start -->
 <footer class="footer-wrap">
     <div class="footer-top">
